@@ -6,6 +6,10 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
+  define: {
+    // 为全局变量提供定义
+    'process.env': {}
+  },
   plugins: [
     vue(),
     vueDevTools(),
