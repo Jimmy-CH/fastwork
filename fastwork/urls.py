@@ -22,16 +22,16 @@ from rest_framework_simplejwt.views import (
 )
 
 _app_v1_patterns = [
-    path('accounts/', include('accounts.urls')),
-    path('customer/', include('customer.urls')),
-    path('service/', include('service_order.urls')),
-    path('product/', include('product.urls')),
-    path('warehouse/', include('warehouse.urls')),
-    path('mall/', include('mall.urls')),
-    path('ai/', include('ai_chatbot.urls')),
-    path('message/', include('message_center.urls')),
-    path('kb/', include('knowledge_base.urls')),
-    path('system/', include('system_management.urls')),
+    path('accounts/', include('apps.accounts.urls')),
+    path('customer/', include('apps.customer.urls')),
+    path('service/', include('apps.service_order.urls')),
+    path('product/', include('apps.product.urls')),
+    path('warehouse/', include('apps.warehouse.urls')),
+    path('mall/', include('apps.mall.urls')),
+    path('ai/', include('apps.ai_chatbot.urls')),
+    path('message/', include('apps.message_center.urls')),
+    path('kb/', include('apps.knowledge_base.urls')),
+    path('system/', include('apps.system_management.urls')),
     path('token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]

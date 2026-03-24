@@ -127,17 +127,17 @@ INSTALLED_APPS = [
     # 'rest_framework_simplejwt.token_blacklist',
     'silk',
     'dbbackup',
-    # app
-    'accounts',
-    'customer',
-    'service_order',
-    'product',
-    'warehouse',
-    'mall',
-    'ai_chatbot',
-    'message_center',
-    'knowledge_base',
-    'system_management',
+    # apps
+    'apps.accounts',
+    'apps.customer',
+    'apps.service_order',
+    'apps.product',
+    'apps.warehouse',
+    'apps.mall',
+    'apps.ai_chatbot',
+    'apps.message_center',
+    'apps.knowledge_base',
+    'apps.system_management',
 ]
 
 # DRF
