@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class MassageCenterConfig(AppConfig):
+class MessageCenterConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'massage_center'
+    name = 'message_center'
