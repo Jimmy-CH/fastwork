@@ -1,3 +1,9 @@
 from django.contrib import admin
+from .models import SystemConfig
 
-# Register your models here.
+
+@admin.register(SystemConfig)
+class SystemConfigAdmin(admin.ModelAdmin):
+    list_display = ('key', 'value', 'description')
+    search_fields = ('key',)
+

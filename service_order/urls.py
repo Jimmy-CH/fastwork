@@ -1,11 +1,8 @@
-from django.urls import path, include
-from rest_framework.routers import DefaultRouter
+from django.urls import path
+from . import views
 
-
-router = DefaultRouter()
-
+app_name = 'service_order'
 
 urlpatterns = [
-    path('', include(router.urls)),
+    # path('', views.index, name='index'),
 ]
-
