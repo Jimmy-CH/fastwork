@@ -123,7 +123,7 @@ INSTALLED_APPS = [
     'django_filters',
     'rest_framework',
     'drf_spectacular',
-    # 'rest_framework_simplejwt',
+    'rest_framework_simplejwt',
     # 'rest_framework_simplejwt.token_blacklist',
     'silk',
     'dbbackup',
@@ -149,12 +149,12 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.BrowsableAPIRenderer',  # 开发用
     ],
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
-    # 'DEFAULT_AUTHENTICATION_CLASSES': (
-    #     'rest_framework_simplejwt.authentication.JWTAuthentication',
-    # ),
-    # 'DEFAULT_PERMISSION_CLASSES': [
-    #     'rest_framework.permissions.IsAuthenticated',  # 默认需要认证
-    # ],
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',  # 默认需要认证
+    ],
     'DEFAULT_FILTER_BACKENDS': [
         'django_filters.rest_framework.DjangoFilterBackend',
         'rest_framework.filters.SearchFilter',       # 搜索
@@ -174,7 +174,8 @@ MEDIA_URL = '/media/'
 if platform.system().lower() == 'windows':
     MEDIA_ROOT = r'D:/media/'
     DB_BACKUP_PATH = r'D:/media/backups/mysql/'
-    LOG_PATH = r'D:/media/logs/'
+    # LOG_PATH = r'D:/media/logs/'
+    LOG_PATH = os.path.join(BASE_DIR, 'logs')
 else:
     # 项目根目录下的 media/ 文件夹
     MEDIA_ROOT = BASE_DIR / 'media'
