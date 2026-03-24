@@ -1,8 +1,12 @@
-from django.urls import path
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
 from . import views
 
-app_name = 'service_order'
+router = DefaultRouter()
+router.register(r'work-orders', views.WorkOrderViewSet)
+router.register(r'feedbacks', views.FeedbackViewSet)
 
 urlpatterns = [
-    # path('', views.index, name='index'),
+    path('api/', include(router.urls)),
 ]
+

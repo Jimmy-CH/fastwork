@@ -1,9 +1,11 @@
-from django.urls import path
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
 from . import views
 
-app_name = 'mall'
+router = DefaultRouter()
+router.register(r'mall-orders', views.MallOrderViewSet)
 
 urlpatterns = [
-    # path('', views.index, name='index'),
+    path('api/', include(router.urls)),
 ]
 

@@ -17,9 +17,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
+_app_v1_patterns = [
+    path('accounts/', include('accounts.urls')),
     path('customer/', include('customer.urls')),
     path('service/', include('service_order.urls')),
+    path('product/', include('product.urls')),
+    path('warehouse/', include('warehouse.urls')),
     path('mall/', include('mall.urls')),
+    path('ai/', include('ai_chatbot.urls')),
+    path('message/', include('message_center.urls')),
+    path('kb/', include('knowledge_base.urls')),
+    path('system/', include('system_management.urls')),
+]
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('v1/', include(_app_v1_patterns)),
 ]
